@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/community
+    username: root
+    password: root
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      maximum-pool-size: 15
+      minimum-idle: 5
+      idle-timeout: 30000
+mybatis:
+  type-aliases-package: com.jing.pojo
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    #    ????
+    map-underscore-to-camel-case: true
+    use-generated-keys: true
+#logging:
+#  level:
+#    com.jing: debug
+#  file:
+#    name: F:/java-project-workspace/community/data/community.log

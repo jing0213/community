@@ -19,4 +19,14 @@
             and user_id = #{userId}
         </if>
     </select>
+    <insert id="insertDisscussPost" parameterType="discussPost">
+        insert into discuss_post(user_id, title, content, type, status, create_time, comment_count, score)
+        values (#{userId},#{title},#{content},#{type},#{status},#{createTime},#{commentCount},#{score})
+    </insert>
+    <select id="selectDiscussPost" resultType="discussPost">
+        select * from discuss_post where id = #{id};
+    </select>
+    <update id="updateCommentCount">
+        update discuss_post set comment_count = #{commentCount} where id = #{id};
+    </update>
 </mapper>

@@ -9,6 +9,20 @@ spring:
       maximum-pool-size: 15
       minimum-idle: 5
       idle-timeout: 30000
+  mail:
+    host: smtp.sina.com
+    username: imcaidoge@sina.com
+    password: 53244ce859f5d93f
+    protocol: smtps
+    properties:
+      auth: true
+      port: 465 #465或者994
+      starttls:
+        enable: true
+        required: true
+      ssl:
+        enable: true
+
 mybatis:
   type-aliases-package: com.jing.pojo
   mapper-locations: classpath:mapper/*.xml
@@ -21,3 +35,10 @@ mybatis:
 #    com.jing: debug
 #  file:
 #    name: F:/java-project-workspace/community/data/community.log
+community:
+  path:
+    domain: http://localhost:8080
+    upload: F:/java-project-workspace/community/data/upload
+server:
+  servlet:
+    context-path: /community
